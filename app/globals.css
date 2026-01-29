@@ -1,26 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@100..900&display=swap");
+
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: "Noto Sans Bengali", sans-serif;
+  background-color: white;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    bottom: -50px;
+  }
+  50% {
+    bottom: 0;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.floating-left {
+  position: absolute;
+  left: 0;
+  bottom: -50px;
+  display: flex;
+  justify-content: flex-start;
+  animation: MoveUpDown 3s linear infinite;
+}
+
+.floating-right {
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  display: flex;
+  justify-content: flex-end;
+  animation: MoveUpDown 3s linear infinite;
+}
+
+.floating-right img {
+  transform: rotateY(180deg);
+}
+
+@keyframes beeFloat {
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(-60%) translateX(10px);
+  }
+}
+
+.bee-float {
+  animation: beeFloat 4s ease-in-out infinite;
 }

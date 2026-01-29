@@ -1,5 +1,6 @@
 import Hero from "./components/landing/Hero";
 import HotlineProducts from "./components/landing/HotlineProducts";
+import FloatingSection from "./components/landing/FloatingSection";
 
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
     <main>
       <Hero />
       <HotlineProducts/>
+      <FloatingSection/>
     </main>
   );
 }
