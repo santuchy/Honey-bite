@@ -1,6 +1,7 @@
 import Hero from "./components/landing/Hero";
 import HotlineProducts from "./components/landing/HotlineProducts";
 import FloatingSection from "./components/landing/FloatingSection";
+import BenefitsSection from "./components/landing/BenefitsSection";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <HotlineProducts/>
       <FloatingSection/>
+      <BenefitsSection/>
     </main>
   );
 }
