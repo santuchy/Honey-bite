@@ -76,3 +76,29 @@ body {
   display: inline-block;
   animation: textclip645 3s linear infinite;
 }
+
+
+@keyframes MoveTriangular {
+  0% {
+    top: 90px;
+    left: 30%;
+    transform: rotate(-90deg);
+  }
+
+  35% {
+    top: 0;
+    left: 15%;
+    transform: rotate(-120deg);
+  }
+
+  100% {
+    top: 90px;
+    left: 10%;
+    transform: rotate(-180deg);
+  }
+}
+
+.bee-animate {
+  position: absolute;
+  animation: MoveTriangular 4s linear infinite;
+}

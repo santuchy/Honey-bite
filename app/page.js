@@ -7,6 +7,7 @@ import HoneyFeature from "./components/landing/HoneyFeature";
 import CustomerReview from "./components/landing/CustomerReview";
 import Footer from './components/landing/Footer';
 import CheckoutSection from './components/landing/CheckoutSection';
+import CTASection from './components/landing/CTASection';
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <FloatingSection/>
       <BenefitsSection/>
       <HoneyFeature/>
+      <CTASection/>
       <WhyChooseUs/>
       <CheckoutSection/>
       <CustomerReview/>
