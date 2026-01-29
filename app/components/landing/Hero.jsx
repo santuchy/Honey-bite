@@ -13,8 +13,6 @@ export default function Hero() {
           priority
           className="object-cover"
         />
-
-        {/* overlay + gradient (readability) */}
         <div className="absolute inset-0 " />
         <div className="absolute inset-0" />
       </div>
@@ -36,7 +34,7 @@ export default function Hero() {
         {/* Content */}
         <div className="mt-8">
           <div className="max-w-2xl text-white">
-            {/* Heading (প্রতি লাইনে এক লাইনে থাকবে, ভাঙবে না) */}
+            {/* Heading */}
             <h1 className="text-3xl font-extrabold leading-tight sm:text-4xl md:text-5xl lg:text-6xl lg:pt-5">
               <span className="block whitespace-nowrap">
                 <span className="text-[#F5C400]">পুষ্টিগুণ বৃদ্ধি</span> মধুময় বাদাম
@@ -62,7 +60,6 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* CTA */}
             <div className="mt-8 lg:pt-5">
               <button
                 type="button"
