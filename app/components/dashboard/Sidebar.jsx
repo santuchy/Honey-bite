@@ -159,9 +159,7 @@ export default function Sidebar({ collapsed = false }) {
     >
       {/* Brand / Header */}
       <div className="flex items-center gap-3 px-4 py-4 border-b border-slate-100">
-        <div className="grid h-7 w-9 place-items-center rounded-xl bg-slate-900 text-white font-bold">
-          D
-        </div>
+        
 
         {!collapsed && (
           <div className="leading-none">
