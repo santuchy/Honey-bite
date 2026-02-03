@@ -41,7 +41,11 @@ export default function Sidebar({ collapsed = false }) {
     if (pathname.startsWith("/dashboard/payment")) return "payment";
     if (pathname.startsWith("/dashboard/customers")) return "customers";
     if (pathname.startsWith("/dashboard/leads")) return "leads";
-    if (pathname.startsWith("/dashboard/projects")) return "projects";
+    if (pathname === "/dashboard/projects") return "projects_home";
+    if (pathname.startsWith("/dashboard/projects/view")) return "projects_view";
+    if (pathname.startsWith("/dashboard/projects/create"))
+      return "projects_create";
+
     if (pathname.startsWith("/dashboard/widgets")) return "widgets";
     if (pathname.startsWith("/dashboard/settings")) return "settings";
     if (pathname.startsWith("/dashboard/auth")) return "auth";
@@ -51,7 +55,7 @@ export default function Sidebar({ collapsed = false }) {
 
   const defaultOpenKeys = useMemo(
     () => getOpenKeysFromPath(pathname),
-    [pathname]
+    [pathname],
   );
 
   const items = useMemo(
@@ -115,8 +119,27 @@ export default function Sidebar({ collapsed = false }) {
           {
             key: "projects",
             icon: <ProjectOutlined />,
-            label: <Link href="/dashboard/projects">Projects</Link>,
+            label: "Projects",
+            children: [
+              {
+                key: "projects_home",
+                label: <Link href="/dashboard/projects">Projects</Link>,
+              },
+              {
+                key: "projects_view",
+                label: (
+                  <Link href="/dashboard/projects/view">Projects View</Link>
+                ),
+              },
+              {
+                key: "projects_create",
+                label: (
+                  <Link href="/dashboard/projects/create">Projects Create</Link>
+                ),
+              },
+            ],
           },
+
           {
             key: "widgets",
             icon: <AppstoreOutlined />,
@@ -140,7 +163,7 @@ export default function Sidebar({ collapsed = false }) {
         ],
       },
     ],
-    []
+    [],
   );
 
   return (
@@ -159,8 +182,6 @@ export default function Sidebar({ collapsed = false }) {
     >
       {/* Brand / Header */}
       <div className="flex items-center gap-3 px-4 py-4 border-b border-slate-100">
-        
-
         {!collapsed && (
           <div className="leading-none">
             <Image
